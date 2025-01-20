@@ -4,6 +4,7 @@ import { MobileNav } from "@/components/mobile-nav";
 import { ModeToggle } from "@/components/mode-toggle";
 import { Button } from "@/components/ui/button";
 import { BookOpen } from "lucide-react";
+import { SearchBar } from "./search-bar";
 
 export function SiteHeader() {
   return (
@@ -17,6 +18,7 @@ export function SiteHeader() {
           <div className="hidden md:block">
             <MainNav />
           </div>
+          <SearchBar />
         </div>
         <div className="flex flex-1 items-center justify-end space-x-4">
           <nav className="flex items-center space-x-2">
@@ -24,7 +26,7 @@ export function SiteHeader() {
             <div className="hidden md:block">
               <Button variant="outline">Sign In</Button>
             </div>
-            <div className="md:hidden">
+            <div className="lg:hidden">
               <MobileNav />
             </div>
           </nav>
