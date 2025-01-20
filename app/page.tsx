@@ -3,7 +3,6 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search, BookOpen, Code2, Lightbulb, ChevronRight } from "lucide-react";
-import Link from "next/link";
 
 export default function Home() {
   return (
