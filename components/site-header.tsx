@@ -4,7 +4,7 @@ import { MobileNav } from "@/components/mobile-nav";
 import { ModeToggle } from "@/components/mode-toggle";
 import { Button } from "@/components/ui/button";
 import { BookOpen } from "lucide-react";
-// import { SearchBar } from "./search-bar";
+import { SearchBar } from "./search-bar";
 // import { searchBox } from 'instantsearch.js/es/widgets';
 
 export function SiteHeader() {
@@ -20,7 +20,7 @@ export function SiteHeader() {
             <MainNav />
           </div>
           {/* <searchBox /> */}
-          {/* <SearchBar /> */}
+          <SearchBar />
         </div>
         <div className="flex flex-1 items-center justify-end space-x-4">
           <nav className="flex items-center space-x-2">
