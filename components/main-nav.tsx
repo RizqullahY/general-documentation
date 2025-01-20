@@ -7,8 +7,8 @@ import { cn } from "@/lib/utils";
 const navigation = [
   { name: "Getting Started", href: "/docs/getting-started" },
   { name: "Components", href: "/docs/components" },
-  { name: "API Reference", href: "/docs/api" },
-  { name: "Examples", href: "/docs/examples" },
+  // { name: "API Reference", href: "/docs/api" },
+  // { name: "Examples", href: "/docs/examples" },
 ];
 
 export function MainNav() {
