@@ -9,11 +9,13 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import Particle from "@/components/particle";
 
 export default function Home() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
+      <Particle />
       <section className="relative bg-gradient-to-b from-primary/5 to-background pt-24 pb-12 flex justify-center">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center space-y-4 text-center">
@@ -91,14 +93,6 @@ export default function Home() {
               </AccordionContent>
             </AccordionItem>
           </Accordion>
-
-          {/* Decorative Elements */}
-          <div className="absolute inset-x-0 top-0 flex justify-center overflow-hidden pointer-events-none">
-            <div className="w-[200px] h-[200px] bg-gradient-radial from-primary to-transparent opacity-10 rounded-full blur-3xl"></div>
-          </div>
-          <div className="absolute inset-x-0 bottom-0 flex justify-center overflow-hidden pointer-events-none">
-            <div className="w-[300px] h-[300px] bg-gradient-radial from-primary/60 to-transparent opacity-5 rounded-full blur-3xl"></div>
-          </div>
         </div>
       </section>
 
