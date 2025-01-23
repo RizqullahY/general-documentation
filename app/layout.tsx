@@ -7,8 +7,8 @@ import { SiteHeader } from "@/components/site-header";
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Modern Documentation',
-  description: 'Clear, concise, and comprehensive documentation for developers',
+  title: 'raflyasliGalek - CORE',
+  description: 'CORE raflyasliGalek',
 };
 
 export default function RootLayout({
