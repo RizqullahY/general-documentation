@@ -5,8 +5,8 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
 const navigation = [
-  { name: "Topan", href: "/docs/topan" },
-  { name: "CTF", href: "/docs/ctf" },
+  { name: "Topan", href: "/core/topan" },
+  { name: "CTF", href: "/core/ctf" },
 ];
 
 export function MainNav() {
