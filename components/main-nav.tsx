@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 
 const navigation = [
   { name: "Topan", href: "/docs/topan" },
+  { name: "CTF", href: "/docs/ctf" },
 ];
 
 export function MainNav() {
