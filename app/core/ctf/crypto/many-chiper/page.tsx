@@ -1,39 +1,36 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@/components/ui/button"; 
-import { Input } from "@/components/ui/input"; 
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import {
   Dialog,
   DialogClose,
   DialogContent,
-  DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Label } from "@/components/ui/label";
 import Swal from "sweetalert2";
 
-export interface Question {
+interface Question {
   correctAnswer: string;
   question: string;
 }
 
-export const questions: Question[] = [
-  {
-    question: "JAM{Z4Al_QzFQaA==KJPVK6Q=43e}",
-    correctAnswer: "CTF{M4Ny_C1PheR_Uz43E}",
-    /**
-     * J - { = Caesar Chiper
-     * Z - _ = ROT13
-     * Q - == = BASE64
-     * K - = = BASE32
-     * 4 - } = Punycode
-     */
-  },
-];
+const questions: Question = {
+  question: "JAM{Z4Al_QzFQaA==KJPVK6Q=43e}",
+  correctAnswer: "CTF{M4Ny_C1PheR_Uz43E}",
+};
+
+/**
+ * J - { = Caesar Chiper
+ * Z - _ = ROT13
+ * Q - == = BASE64
+ * K - = = BASE32
+ * 4 - } = Punycode
+ */
 
 export default function ManyChiper() {
   const [answer, setAnswer] = useState<string>("");
@@ -52,8 +49,7 @@ export default function ManyChiper() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    const currentQuestion = questions[0];
-    if (answer.trim() === currentQuestion.correctAnswer) {
+    if (answer.trim() === questions.correctAnswer) {
       Toast.fire({
         icon: "success",
         title: "Correct",
@@ -79,7 +75,7 @@ export default function ManyChiper() {
             ROT13, BASE64, BASE32, dan Punycode.
           </p>
           <p className="text-base text-center font-bold">
-          {questions[0].question}
+            {questions.question}
           </p>
         </div>
 
