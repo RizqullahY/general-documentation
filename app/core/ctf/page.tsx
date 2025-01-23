@@ -36,15 +36,10 @@ const CaptureTheFlag: React.FC = () => {
       {/* Header Section */}
       <header className="mb-8">
         <h1 className="text-4xl font-bold mb-4">Capture The Flag (CTF)</h1>
-        <p className="text-lg text-gray-600">
-          Explore a variety of challenges to test your skills in cybersecurity.
-          From web exploitation to reverse engineering, there's something for
-          everyone.
-        </p>
       </header>
 
       {/* Cards Section */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center p-5">
         {ctfData.slice(0, visibleItems).map((ctf, index) => (
           <Link href={ctf.route}>
             <Card key={index} className="shadow-md transform transition-transform hover:scale-105 hover:rotate-1">

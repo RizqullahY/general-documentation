@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@/components/ui/button"; // import button dari UI ShadCN
-import { Input } from "@/components/ui/input"; // import input
+import { Button } from "@/components/ui/button"; 
+import { Input } from "@/components/ui/input"; 
 import {
   Dialog,
   DialogClose,
@@ -17,22 +17,25 @@ import { Label } from "@/components/ui/label";
 import Swal from "sweetalert2";
 
 export interface Question {
-  question: string;
   correctAnswer: string;
-  encodedFlag: string;
-  hint: string;
+  question: string;
 }
 
 export const questions: Question[] = [
   {
-    question: "What is the flag for the Cryptography challenge?",
-    correctAnswer: "123",
-    encodedFlag: "Y3J5cHRve3RlY2VvZGluZ19pcyBmdW59",
-    hint: "The flag is encoded in Base64. Try to decode it.",
+    question: "JAM{Z4Al_QzFQaA==KJPVK6Q=43e}",
+    correctAnswer: "CTF{M4Ny_C1PheR_Uz43E}",
+    /**
+     * J - { = Caesar Chiper
+     * Z - _ = ROT13
+     * Q - == = BASE64
+     * K - = = BASE32
+     * 4 - } = Punycode
+     */
   },
 ];
 
-export default function Crypto() {
+export default function ManyChiper() {
   const [answer, setAnswer] = useState<string>("");
   const Toast = Swal.mixin({
     toast: true,
@@ -66,20 +69,22 @@ export default function Crypto() {
   return (
     <div className="container p-5 flex justify-center items-center min-h-screen">
       <div className="mx-auto max-w-4xl w-full">
-        <h1 className="text-4xl font-bold text-center">Crypto CTF Challenge</h1>
+        <h1 className="text-4xl font-bold text-center">
+          Many Cipher & Encode Flag
+        </h1>
 
         <div className="mt-5">
-          <h2 className="text-2xl text-center">Apa itu Cryptography?</h2>
-          <p className="text-sm text-center">
-            Cryptography adalah seni dan ilmu untuk mengamankan komunikasi dan
-            informasi dari pihak yang tidak berwenang. Dalam tantangan ini, Anda
-            akan mencoba untuk memecahkan cipher yang digunakan untuk
-            menyembunyikan informasi penting.
+          <p className="text-base text-center">
+            Flag ini di encode oleh beberapa metode seperti Caesar Cipher,
+            ROT13, BASE64, BASE32, dan Punycode.
+          </p>
+          <p className="text-base text-center font-bold">
+          {questions[0].question}
           </p>
         </div>
 
+        {/* Dialog untuk memberikan hint */}
         <div className="mt-10 text-center">
-          {/* Button untuk membuka dialog dengan petunjuk */}
           <Dialog>
             <DialogTrigger asChild>
               <Button variant="outline">HINT</Button>
@@ -87,14 +92,17 @@ export default function Crypto() {
             <DialogContent className="sm:max-w-md">
               <DialogHeader>
                 <DialogTitle>HINT</DialogTitle>
-                <DialogDescription>{questions[0].hint}</DialogDescription>
               </DialogHeader>
               <div className="flex items-center space-x-2">
                 <div className="grid flex-1 gap-2">
-                  <Label htmlFor="link" className="sr-only">
-                    Flag Ter-encode
-                  </Label>
-                  <p>{questions[0].encodedFlag}</p>
+                  <pre>
+                    {`
+   * J - { = Caesar Cipher
+   * Z - _ = ROT13
+   * Q - == = BASE64
+   * K - = = BASE32
+   * 4 - } = Punycode`}
+                  </pre>
                 </div>
               </div>
               <DialogFooter className="sm:justify-start">
@@ -116,7 +124,7 @@ export default function Crypto() {
               value={answer}
               onChange={(e) => setAnswer(e.target.value)}
               className="px-4 py-2 border rounded w-full"
-              placeholder="Masukkan flag yang sudah didekode"
+              placeholder="CTF{...}"
             />
             <Button type="submit" className="w-full mt-4">
               Submit
