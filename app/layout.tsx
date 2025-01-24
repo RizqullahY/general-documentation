@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { ThemeProvider } from "@/components/theme-provider";
 import { SiteHeader } from "@/components/site-header";
+import Head from 'next/head';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -30,6 +31,10 @@ export default function RootLayout({
             <div className="flex-1">{children}</div>
           </div>
         </ThemeProvider>
+      <Head>
+      <link rel="icon" href="/core-icon.png" type="image/png" sizes="32x32" />
+      <link rel="icon" href="/core-icon.png" type="image/png" sizes="16x16" />
+      </Head>
       </body>
     </html>
   );
